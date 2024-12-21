@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 // import { error } from 'console';
 // dotenv.config();
 
+import userRoutes from './routes/user.route.js';
+
 
 mongoose.connect("mongodb+srv://ahmed1000:ahmed1000@mern.oq2ns.mongodb.net/?retryWrites=true&w=majority&appName=mern").then(() => {
   console.log("Conntected");
@@ -18,3 +20,6 @@ app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
 
+
+
+app.use("/api/user", userRoutes);
