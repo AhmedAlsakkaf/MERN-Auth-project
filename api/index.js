@@ -1,19 +1,20 @@
 import express from 'express';
 import mongoose from 'mongoose';
-// import dotenv from 'dotenv';
-// import { error } from 'console';
-// dotenv.config();
+import dotenv from 'dotenv';
+// // import { error } from 'console';
+dotenv.config();
 
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 
 
-mongoose.connect("mongodb+srv://ahmed1000:ahmed1000@mern.oq2ns.mongodb.net/?retryWrites=true&w=majority&appName=mern").then(() => {
-  console.log("Conntected");
+mongoose.connect(process.env.MONGO).then(() => {
+  console.log("Conntected to MongoDB");
 })
 .catch((error) =>{
   console.log(error);
 });
+
 
 const app = express();
 
@@ -39,3 +40,6 @@ app.use((err, req, res, next) =>{
     statusCode
   });
 });
+
+
+
