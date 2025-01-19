@@ -1,7 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-// // import { error } from 'console';
+// import { error } from 'console';
+// import { errorHandler } from '../utiles/error.js';
 dotenv.config();
 
 import userRoutes from './routes/user.route.js';
